@@ -1,0 +1,1 @@
+# Welcome to Mini Project with Frontend Angular 16 & Backend Spring Boot, MySQL, Hibernate and Liquibase project
