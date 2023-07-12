@@ -17,6 +17,8 @@ import { DetailProductComponent } from './compnents/user/detail-product/detail-p
 import { HomeComponent } from './compnents/user/home/home.component';
 import { ProfileComponent } from './compnents/user/profile/profile.component';
 import { RegisterComponent } from './compnents/user/register/register.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { RegisterComponent } from './compnents/user/register/register.component'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
