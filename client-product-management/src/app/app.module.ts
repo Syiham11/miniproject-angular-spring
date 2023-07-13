@@ -19,6 +19,16 @@ import { ProfileComponent } from './compnents/user/profile/profile.component';
 import { RegisterComponent } from './compnents/user/register/register.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSelectModule} from '@angular/material/select';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
+import {MatSortModule} from '@angular/material/sort';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -43,7 +53,17 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatButtonModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatSelectModule,
+    MatProgressBarModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatSortModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
