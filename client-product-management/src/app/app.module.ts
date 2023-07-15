@@ -30,6 +30,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderUserComponent } from './compnents/template/header-user/header-user.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     ProfileComponent,
     RegisterComponent,
+    HeaderUserComponent,
   ],
   imports: [
     BrowserModule,
