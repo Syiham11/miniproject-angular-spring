@@ -11,28 +11,29 @@ import {Router, RoutesRecognized} from '@angular/router';
 })
 export class AppComponent{
   title = 'client-product-management';
-  currentUser: User | undefined;
+  currentUser !: User;
   isAdminPanel: boolean = false;
   constructor(private userService: UserService, private router: Router){
     this.userService.currentUser.subscribe(data => {
       this.currentUser = data;
-      this.userChanged();
+      // this.userChanged();
     });
   }
 
-  userChanged(){
-    if(!this.currentUser || Role.ADMIN !== this.currentUser.role){
-      this.isAdminPanel = false;
-      return;
-    }
-    this.router.events.subscribe((evt) => {
-      if(evt instanceof RoutesRecognized){
-        var roles = evt.state.root.firstChild ? evt.state.root.firstChild.data['roles'] : {};
-        var currentUserCheck = this.currentUser ? this.currentUser.role : null
-        if(roles && roles.indexOf(currentUserCheck)!== -1){
-          this.isAdminPanel = true;
-        }
-      }
-    });
-  }
+  //this function for if app component html use check admin or not
+  // userChanged(){
+  //   if(!this.currentUser || Role.ADMIN !== this.currentUser.role){
+  //     this.isAdminPanel = false;
+  //     return;
+  //   }
+  //   this.router.events.subscribe((evt) => {
+  //     if(evt instanceof RoutesRecognized){
+  //       var roles = evt.state.root.firstChild ? evt.state.root.firstChild.data['roles'] : {};
+  //       var currentUserCheck = this.currentUser ? this.currentUser.role : null
+  //       if(roles && roles.indexOf(currentUserCheck)!== -1){
+  //         this.isAdminPanel = true;
+  //       }
+  //     }
+  //   });
+  // }
 }
