@@ -13,7 +13,6 @@ export class AuthGuard implements  CanActivate {
   private userService: UserService){
     this.userService.currentUser.subscribe(data => {
       this.currentUser = data;
-      console.log(this.currentUser);
     });
   }
 
