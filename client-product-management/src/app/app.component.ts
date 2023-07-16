@@ -11,16 +11,17 @@ import {Router, RoutesRecognized} from '@angular/router';
 })
 export class AppComponent{
   title = 'client-product-management';
-  currentUser !: User;
-  isAdminPanel: boolean = false;
-  constructor(private userService: UserService, private router: Router){
-    this.userService.currentUser.subscribe(data => {
-      this.currentUser = data;
-      // this.userChanged();
-    });
-  }
+  //=========this code for if app component html use check admin or not==============
 
-  //this function for if app component html use check admin or not
+  // currentUser !: User;
+  // isAdminPanel: boolean = false;
+  // constructor(private userService: UserService, private router: Router){
+  //   this.userService.currentUser.subscribe(data => {
+  //     this.currentUser = data;
+  //     // this.userChanged();
+  //   });
+  // }
+
   // userChanged(){
   //   if(!this.currentUser || Role.ADMIN !== this.currentUser.role){
   //     this.isAdminPanel = false;
