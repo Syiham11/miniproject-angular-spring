@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit  {
   user: User = new User();
-  errorMessage:string | undefined;
+  errorMessage !:string;
 
   constructor(private userService: UserService, private router: Router) { }
 

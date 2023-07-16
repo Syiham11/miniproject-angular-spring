@@ -8,7 +8,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./detail-product.component.css']
 })
 export class DetailProductComponent implements OnInit {
-  productId: string | undefined;
+  productId!: string;
   currentProduct: Product;
 
   constructor(private route: ActivatedRoute) {
