@@ -1,9 +1,11 @@
 package com.sha.serverproductmanagement.controller;
 
 import com.sha.serverproductmanagement.model.Product;
+import com.sha.serverproductmanagement.model.Promo;
 import com.sha.serverproductmanagement.model.StringResponse;
 import com.sha.serverproductmanagement.model.User;
 import com.sha.serverproductmanagement.service.ProductService;
+import com.sha.serverproductmanagement.service.PromoService;
 import com.sha.serverproductmanagement.service.TransactionService;
 import com.sha.serverproductmanagement.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,9 @@ public class AdminController {
 
     @Autowired
     private TransactionService transactionService;
+
+    @Autowired
+    private PromoService promoService;
 
     @PutMapping("/api/admin/user-update")
     public ResponseEntity<?> updateUser(@RequestBody User user) {
@@ -74,6 +79,7 @@ public class AdminController {
         return new ResponseEntity<>(productService.findAllProducts(), HttpStatus.OK);
     }
 
+
     @GetMapping("/api/admin/product-number")
     public ResponseEntity<?> numberOfProducts(){
         Long number = productService.numberOfProducts();
@@ -94,4 +100,28 @@ public class AdminController {
         response.setResponse(number.toString());
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+    /// this promo route
+
+    @PostMapping("/api/admin/promo-create")
+    public ResponseEntity<?> createPromo(@RequestBody Promo promo){
+        return new ResponseEntity<>(promoService.savePromo(promo), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/api/admin/promo-update")
+    public ResponseEntity<?> updatePromo(@RequestBody Promo promo){
+        return new ResponseEntity<>(promoService.updatePromo(promo), HttpStatus.CREATED);
+    }
+
+    @PostMapping("/api/admin/promo-delete")
+    public ResponseEntity<?> deletePromo(@RequestBody Promo promo){
+        promoService.deletePromo(promo.getId());
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/api/admin/promo-all")
+    public ResponseEntity<?> findAllPromo(){
+        return new ResponseEntity<>(promoService.findAllPromo(), HttpStatus.OK);
+    }
+
 }

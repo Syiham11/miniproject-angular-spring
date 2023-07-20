@@ -14,4 +14,5 @@ public interface ProductService {
     Long numberOfProducts();
 
     List<Product> findAllProducts();
+
 }
