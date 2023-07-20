@@ -8,6 +8,7 @@ import {DetailProductComponent} from './compnents/user/detail-product/detail-pro
 import {DashboardComponent} from './compnents/admin/dashboard/dashboard.component';
 import {UserListComponent} from './compnents/admin/user-list/user-list.component';
 import {ProductListComponent} from './compnents/admin/product-list/product-list.component';
+import {PromoListComponent} from './compnents/admin/promo-list/promo-list.component';
 import {UnathorizedComponent} from './compnents/error/unathorized/unathorized.component';
 import {NotFoundComponent} from './compnents/error/not-found/not-found.component';
 import {TransactionListComponent} from './compnents/admin/transaction-list/transaction-list.component';
@@ -41,6 +42,11 @@ const routes: Routes = [
   },
   {path: 'product-list',
   component: ProductListComponent,
+  canActivate: [AuthGuard],
+  data: {roles: [Role.ADMIN]}
+ },
+ {path: 'promo-list',
+  component: PromoListComponent,
   canActivate: [AuthGuard],
   data: {roles: [Role.ADMIN]}
  },

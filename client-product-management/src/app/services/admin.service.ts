@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {User} from '../model/user';
 import {Product} from '../model/product';
+import {Promo} from '../model/promo';
 import {Transaction} from '../model/transaction';
 let API_URL = "http://localhost:8080/api/admin/";
 
@@ -77,4 +78,28 @@ export class AdminService {
     return this.http.get(API_URL + "transaction-number",
   {headers: this.headers});
   }
+
+
+
+  //promo
+  createPromo(promo: Promo): Observable<any> {
+    return this.http.post(API_URL + "promo-create", JSON.stringify(promo),
+  {headers: this.headers});
+  }
+
+  updatePromo(promo: Promo): Observable<any> {
+    return this.http.put(API_URL + "promo-update", JSON.stringify(promo),
+  {headers: this.headers});
+  }
+
+  deletePromo(promo: Promo): Observable<any> {
+    return this.http.post(API_URL + "promo-delete", JSON.stringify(promo),
+  {headers: this.headers});
+  }
+
+  findAllPromo(): Observable<any> {
+    return this.http.get(API_URL + "promo-all",
+  {headers: this.headers});
+  }
+
 }

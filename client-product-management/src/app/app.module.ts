@@ -31,6 +31,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatIconModule} from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderUserComponent } from './compnents/template/header-user/header-user.component';
+import { PromoListComponent } from './compnents/admin/promo-list/promo-list.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { HeaderUserComponent } from './compnents/template/header-user/header-use
     ProfileComponent,
     RegisterComponent,
     HeaderUserComponent,
+    PromoListComponent,
   ],
   imports: [
     BrowserModule,
